@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  assetPrefix: '/', // works for S3 root hosting
   images: {
+    unoptimized: true, // ✅ disable server-side optimization for static hosting
     remotePatterns: [
       {
         protocol: 'https',
