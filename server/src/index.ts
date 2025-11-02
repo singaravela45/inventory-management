@@ -24,17 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // --- CORS Configuration ---
-app.use(
-  cors({
-    origin: [
-      'http://inventory-mng-frontend.s3-website.ap-south-2.amazonaws.com', // your deployed frontend
-      'http://localhost:3000', // optional for local testing
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-  })
-);
-
+app.use(cors());
 /* ROUTES */
 app.use('/dashboard', dashboardRoutes);
 app.use('/products', productRoutes);
